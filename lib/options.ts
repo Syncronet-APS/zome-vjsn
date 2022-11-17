@@ -4,6 +4,9 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 
+
+type Selector = string | HTMLElement
+
 export interface vjsnOptions {
   /**
    * #### `selector`
@@ -98,10 +101,10 @@ It should be a PlainObject consists of four properties: `'left'`, `'right'`, `'u
 
    */
   leaveFor?: {
-    left?: string;
-    right?: string;
-    up?: string;
-    down?: string;
+    left?: Selector;
+    right?: Selector;
+    up?: Selector;
+    down?: Selector;
   };
 
   /**
