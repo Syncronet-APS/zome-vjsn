@@ -41,9 +41,9 @@ We are willing to answer questions.
 ## Getting Started
 
 ```javascript
-import vueSpatialNavigation from "zome-vjsn";
+import vjsn from "zome-vjsn";
 
-app.use(vueSpatialNavigation);
+app.use(vjsn);
 ```
 
 #### Optional global [Configuration](https://github.com/luke-chang/js-spatial-navigation#configuration)
@@ -71,7 +71,7 @@ const globalConfig = {
   navigableFilter: null,
   scrollOptions: { behavior: "smooth", block: "center" },
 };
-Vue.use(vueSpatialNavigation, globalConfig);
+Vue.use(vjsn, globalConfig);
 ```
 
 ## Documentation
