@@ -5,6 +5,7 @@
  */
 
 import type { Plugin } from "vue";
+import type { vjsnOptions } from "zome-vjsn";
 import SpatialNavigation, { EVENT_PREFIX } from "./spatial_navigation";
 import "./globalExtensions";
 // import "focus-options-polyfill";
@@ -21,7 +22,7 @@ const vueSpatialNavigation: Plugin = {
     // Vue.prototype.$SpatialNavigation = SpatialNavigation;
     Vue.config.globalProperties.$SpatialNavigation = SpatialNavigation;
 
-    const assignConfig = (sectionId: string | undefined, config: object) => {
+    const assignConfig = (sectionId: string | undefined, config: vjsnOptions) => {
       let sectionConfig = Object.assign({}, globalConfig);
       if (config) {
         Object.assign(sectionConfig, config);
