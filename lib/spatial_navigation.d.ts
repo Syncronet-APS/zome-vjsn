@@ -15,8 +15,7 @@ declare namespace SpatialNavigation {
   function pause(): void;
   function resume(): void;
   function focus(silent?: boolean): HTMLElement;
-  function focus(sectionId?: string, silent?: boolean): HTMLElement;
-  function focus(extSelector?: unknown, silent?: boolean): HTMLElement;
+  function focus(selector?: string, silent?: boolean): HTMLElement;
   function move(direction: "left" | "up" | "right" | "down", selector?: HTMLElement): boolean | HTMLElement;
   function makeFocusable(sectionId?: string): void;
   function setDefaultSection(sectionId?: string): void;

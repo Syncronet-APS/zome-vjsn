@@ -82,7 +82,7 @@ If the focus comes from another section, you can define which element in this se
 
 `''` (empty string) implies following the original rule without any change.
    */
-  enterTo?: string;
+  enterTo?: '' | 'last-focused' | 'default-element';
 
   /**
    * #### `leaveFor`
@@ -97,7 +97,12 @@ It should be a PlainObject consists of four properties: `'left'`, `'right'`, `'u
 **Note:** Assigning an empty string to any of these properties makes SpatialNavigation go nowhere at that direction.
 
    */
-  leaveFor?: any;
+  leaveFor?: {
+    left?: string;
+    right?: string;
+    up?: string;
+    down?: string;
+  };
 
   /**
    * #### `restrict`
@@ -111,7 +116,7 @@ It should be a PlainObject consists of four properties: `'left'`, `'right'`, `'u
 
 `'none'` implies no restriction.
    */
-  restrict?: string;
+  restrict?: 'self-first' | 'self-only' | 'none';
 
   /**
    * #### `tabIndexIgnoreList`
@@ -134,7 +139,7 @@ A callback function that accepts a DOM element as the first argument.
 SpatialNavigation calls this function every time when it tries to traverse every single candidate. You can ignore arbitrary elements by returning `false`.
 
    */
-  navigableFilter?: any;
+  navigableFilter?: (elem: HTMLElement, sectionId?: string) => boolean;
 
   /**
    * scrollIntoViewOptions https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView
